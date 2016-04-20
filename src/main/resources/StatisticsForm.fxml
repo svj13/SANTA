@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.StatisticsFormController">
+   <children>
+      <TabPane fx:id="statsTabs" style="-fx-border-color: #db0606;" stylesheets="@statsPanel.css" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Welcome">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                              <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text fx:id="tutDesc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                       <font>
+                                          <Font name="Arial Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </TextFlow>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <HBox VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" VBox.vgrow="SOMETIMES">
+                                       <children>
+                                          <Text fx:id="overviewDesc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                             <font>
+                                                <Font name="Arial" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </TextFlow>
+                                    <StackPane VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                                             <image>
+                                                <Image url="@pic/overview.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" VBox.vgrow="SOMETIMES">
+                                       <children>
+                                          <Text fx:id="typeDesc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                                       </children>
+                                    </TextFlow>
+                                    <StackPane VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                                             <image>
+                                                <Image url="@pic/types.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" VBox.vgrow="SOMETIMES">
+                                       <children>
+                                          <Text fx:id="trendDesc" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                                       </children>
+                                    </TextFlow>
+                                    <StackPane VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                                             <image>
+                                                <Image url="@pic/trends.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <effect>
+                        <InnerShadow color="#db0606" />
+                     </effect>
+                  </VBox>
+               </content></Tab>
+          <Tab fx:id="overviewTab" closable="false" text="Overview">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextFlow prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Text fx:id="overviewCats" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                                       </children>
+                                    </TextFlow>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="RIGHT" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Text fx:id="overviewData" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                                       </children>
+                                    </TextFlow>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                     <effect>
+                        <InnerShadow color="#db0606" />
+                     </effect>
+                  </VBox>
+               </content></Tab>
+            <Tab fx:id="typeBreakdownTab" closable="false" text="Type Breakdown">
+               <content>
+                  <HBox>
+                     <children>
+                        <VBox HBox.hgrow="SOMETIMES">
+                           <children>
+                               <TextArea fx:id="breakdownDescription" editable="false" prefWidth="200.0" wrapText="true" VBox.vgrow="SOMETIMES" />
+                              <TextArea fx:id="breakdownTotals" editable="false" prefWidth="200.0" wrapText="true" VBox.vgrow="SOMETIMES" />
+                              <TextArea fx:id="breakdownTop" editable="false" prefWidth="200.0" wrapText="true" VBox.vgrow="SOMETIMES" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="SOMETIMES">
+                           <children>
+                              <PieChart fx:id="breakdownPie" animated="false" legendVisible="false" />
+                              <BarChart fx:id="breakdownBar" alternativeRowFillVisible="false" animated="false" barGap="2.0" categoryGap="5.0" horizontalZeroLineVisible="false" legendVisible="false">
+                                <xAxis>
+                                  <CategoryAxis label="Primary Description" tickLabelRotation="-90.0" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="Number of  Crimes" side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <InnerShadow color="#db0606" />
+                     </effect>
+                  </HBox>
+               </content>
+            </Tab>
+            <Tab fx:id="trendTab" closable="false" text="Trend Overview">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <LineChart fx:id="trendGraph" animated="false" legendVisible="false" title="Crimes over time" HBox.hgrow="ALWAYS">
+                                <xAxis>
+                                  <CategoryAxis label="Selected dates from range" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="Number of Crimes" side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </HBox>
+                     </children>
+                     <effect>
+                        <InnerShadow color="#db0606" />
+                     </effect>
+                  </VBox>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

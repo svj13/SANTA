@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="700.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.RootController">
+  <children>
+    <HBox style="-fx-background-color: #DB0606;">
+      <children>
+            <MenuButton fx:id="fileMenu" mnemonicParsing="false" text="File">
+               <items>
+            <MenuItem fx:id="impFile" mnemonicParsing="false" onAction="#importFile" text="Import" />
+                  <MenuItem fx:id="export" mnemonicParsing="false" onAction="#export" text="Export" />
+                  <MenuItem fx:id="createRecord" mnemonicParsing="false" onAction="#createRecord" text="Create Record" />
+            <MenuItem fx:id="btnQuit" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="viewMenu" mnemonicParsing="false" text="View">
+               <items>
+                  <CheckMenuItem fx:id="showFilterPanel" mnemonicParsing="false" onAction="#minimizeFilter" selected="true" text="Show Filter Panel" />
+                  <CheckMenuItem fx:id="showRecordPanel" mnemonicParsing="false" onAction="#minimizeDataViewer" selected="true" text="Show Viewing Record Panel" />
+               </items></MenuButton>
+            <MenuButton fx:id="helpMenu" mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="userManual" mnemonicParsing="false" onAction="#openUserManual" text="User Manual" />
+               </items></MenuButton>
+        <Region HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Region>
+            <HBox fx:id="progressBox" visible="false">
+               <children>
+                  <Label fx:id="currentTasklb" style="-fx-text-fill: #D8E6E6;" text="Current Task" textFill="#070707">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ProgressIndicator fx:id="progressWheel" progress="0.0" />
+               </children>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnGenerateStatistics" mnemonicParsing="false" onAction="#generateStatistics" text="Analyse Data">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></Button>
+            <Button fx:id="btnAddDataSet" mnemonicParsing="false" onAction="#addUserList" text="Add">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></Button>
+            <ChoiceBox fx:id="UserListBox" prefWidth="150.0" />
+            <Button fx:id="btnDeleteDataSet" mnemonicParsing="false" onAction="#deleteUserList" text="Delete" />
+      </children>
+      <VBox.margin>
+        <Insets />
+      </VBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+    </HBox>
+      <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+         <tabs>
+            <Tab fx:id="raw_data_viewer" closable="false" text="Record Viewer">
+               <content>
+                  <SplitPane dividerPositions="0.18875192604006163, 0.6926040061633282" prefHeight="626.0" prefWidth="1300.0" VBox.vgrow="ALWAYS">
+                    <items>
+                        <AnchorPane fx:id="filterBar" maxWidth="250.0" minWidth="250.0" prefWidth="250.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox VBox.vgrow="NEVER">
+                                       <children>
+                                          <TextField fx:id="txfSearch" prefWidth="180.0" promptText=" Enter A Key Word" />
+                                          <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefWidth="70.0" text="Search" HBox.hgrow="NEVER" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <AnchorPane>
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Date Range">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="50.0" text="From" textAlignment="CENTER">
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <DatePicker fx:id="dateFieldFrom" prefWidth="194.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </DatePicker>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefWidth="200.0">
+                                                   <children>
+                                                      <Label prefWidth="50.0" text="To" textAlignment="CENTER">
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <DatePicker fx:id="dateFieldTo" prefWidth="194.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </DatePicker>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox layoutY="-14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label text="Crime Types">
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <CheckBox fx:id="cboxAll" mnemonicParsing="false" onAction="#selectAll" text="Select All">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </CheckBox>
+                                                   </children>
+                                                </HBox>
+                                                <ScrollPane VBox.vgrow="ALWAYS">
+                                                   <content>
+                                                      <VBox fx:id="typeBox" />
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane>
+                                       <children>
+                                          <VBox layoutX="75.0" layoutY="-28.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <CheckBox fx:id="domesticBox" mnemonicParsing="false" text="Domestic">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="arrestedBox" mnemonicParsing="false" text="Arrested">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Button fx:id="btnfilter" mnemonicParsing="false" onAction="#filter" prefHeight="31.0" prefWidth="184.0" text="Filter" />
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                            <TableView fx:id="tableView" layoutX="2.0" prefHeight="596.0" prefWidth="696.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
+                              <columns>
+                                <TableColumn fx:id="caseNumberCol" prefWidth="110.0" text="Case Number" />
+                                <TableColumn fx:id="primaryCol" prefWidth="170.0" text="Primary Description" />
+                                <TableColumn fx:id="secondaryCol" prefWidth="170.0" text="Secondary Description" />
+                                <TableColumn fx:id="locationCol" prefWidth="170.0" text="Location Description" />
+                                <TableColumn fx:id="dateCol" prefWidth="150.0" text="Date" />
+                                <TableColumn fx:id="arrestCol" prefWidth="75.0" text="Arrest" />
+                              </columns>
+                            </TableView>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </AnchorPane>
+                      <AnchorPane fx:id="dataViewer" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                           <children>
+                              <AnchorPane prefHeight="573.0" prefWidth="441.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox layoutX="-1.0" layoutY="7.8642578125" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Pane layoutX="-0.5" layoutY="7.8642578125">
+                                             <children>
+                                                <TextField fx:id="viewDate" editable="false" layoutX="226.5" layoutY="45.1357421875" prefHeight="31.0" prefWidth="164.0" />
+                                                <Text layoutX="186.5" layoutY="68.1357421875" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                                                <Text fx:id="header" layoutX="4.5" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Record:">
+                                                   <font>
+                                                      <Font size="27.0" />
+                                                   </font>
+                                                </Text>
+                                                <Label layoutX="2.5" layoutY="51.1357421875" text="Crime id" />
+                                                <TextField fx:id="viewCase" editable="false" layoutX="72.5" layoutY="46.1357421875" prefHeight="31.0" prefWidth="106.0" />
+                                                <Line endX="400.0" layoutY="36.6357421875" />
+                                                <DatePicker fx:id="editDate" layoutX="228.0" layoutY="48.0" prefHeight="26.0" prefWidth="161.0" visible="false" />
+                                             </children>
+                                          </Pane>
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Pane layoutX="-0.5" layoutY="90.0">
+                                             <children>
+                                                <Label layoutX="0.5" text="Description">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Line endX="400.0" layoutY="22.5" />
+                                                <Text layoutX="2.5" layoutY="50.8134765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Primary" />
+                                                <TextField fx:id="viewPrimary" editable="false" layoutX="80.5" layoutY="28.0" prefHeight="31.0" prefWidth="309.0" />
+                                                <Text layoutX="2.5" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secondary" />
+                                                <TextField fx:id="viewSecondary" editable="false" layoutX="80.5" layoutY="66.0" prefHeight="31.0" prefWidth="309.0" />
+                                             </children>
+                                          </Pane>
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Pane layoutX="2.0" layoutY="191.0">
+                                             <children>
+                                                <Label layoutX="1.0" text="Location">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Line endX="400.0" layoutY="22.0" />
+                                                <Text layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                                                <TextField fx:id="viewLocation" editable="false" layoutX="80.0" layoutY="28.0" prefHeight="31.0" prefWidth="307.0" />
+                                                <Text layoutX="2.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beat" />
+                                                <TextField fx:id="viewBeat" editable="false" layoutX="78.0" layoutY="67.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="208.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ward" />
+                                                <TextField fx:id="viewWard" editable="false" layoutX="289.0" layoutY="68.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="2.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IUCR" />
+                                                <TextField fx:id="viewIucr" editable="false" layoutX="78.0" layoutY="107.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="208.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Block" />
+                                                <TextField fx:id="viewBlock" editable="false" layoutX="289.0" layoutY="109.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="2.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x Coord" />
+                                                <TextField fx:id="viewX" editable="false" layoutX="78.0" layoutY="150.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="208.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y Coord" />
+                                                <TextField fx:id="viewY" editable="false" layoutX="289.0" layoutY="149.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="2.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latitude" />
+                                                <TextField fx:id="viewLat" editable="false" layoutX="78.0" layoutY="191.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="206.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Longitude" />
+                                                <TextField fx:id="viewLong" editable="false" layoutX="290.0" layoutY="190.0" prefHeight="26.0" prefWidth="96.0" />
+                                             </children>
+                                          </Pane>
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Pane layoutX="-0.5" layoutY="411.0">
+                                             <children>
+                                                <Line endX="400.0" layoutY="23.5" />
+                                                <Label layoutX="5.5" text="Other">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text layoutX="4.5" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FBI CD" />
+                                                <TextField fx:id="viewFbi" editable="false" layoutX="80.5" layoutY="32.0" prefHeight="26.0" prefWidth="96.0" />
+                                                <Text layoutX="208.5" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Domestic" />
+                                                <CheckBox fx:id="viewDomestic" disable="true" layoutX="277.0" layoutY="37.0" mnemonicParsing="false" />
+                                                <Text layoutX="316.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrest" />
+                                                <CheckBox fx:id="viewArrest" disable="true" layoutX="362.5" layoutY="39.0" mnemonicParsing="false" />
+                                             </children>
+                                          </Pane>
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Pane layoutX="6.0" layoutY="489.0">
+                                             <children>
+                                                <Button fx:id="btnDeleteRecord" layoutX="-3.0" layoutY="41.0" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="31.0" prefWidth="114.0" text="Delete Record" />
+                                                <Label fx:id="timeDiff" alignment="CENTER" layoutX="122.0" layoutY="11.0" prefHeight="17.0" prefWidth="50.0" text="Na " />
+                                                <Label layoutX="-1.0" layoutY="11.0" text="Time to previous">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnShowMap" layoutX="114.0" layoutY="41.0" mnemonicParsing="false" onAction="#generateMapForSingleCrime" prefHeight="31.0" prefWidth="169.0" text="Show Record on Map" />
+                                                <Button fx:id="btnEditRecord" layoutX="285.0" layoutY="41.0" mnemonicParsing="false" onAction="#editRecord" prefHeight="31.0" prefWidth="115.0" text="Edit Record" />
+                                                <Label layoutX="177.0" layoutY="11.0" text="Distance to previous">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="distance" alignment="CENTER" layoutX="335.0" layoutY="11.0" prefHeight="17.0" prefWidth="51.0" text="Na" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab fx:id="generate_map_tab" closable="false" text="Map View">
+              <content>
+                <AnchorPane fx:id="map_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+  </children>
+</VBox>

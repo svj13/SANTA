@@ -1,0 +1,4 @@
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-max-height: 500px;
+}

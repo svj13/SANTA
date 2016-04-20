@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.DataNameController">
+   <children>
+      <HBox nodeOrientation="LEFT_TO_RIGHT">
+         <children>
+            <VBox prefHeight="228.0" prefWidth="385.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <Label fx:id="displayLabel1" alignment="CENTER" prefHeight="68.0" prefWidth="374.0" style="-fx-text-fill: #DB0606;" text="Enter a name for" textAlignment="CENTER">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <HBox>
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label fx:id="displayLabel2" alignment="CENTER" style="-fx-text-fill: #DB0606;" text="your custom list:" textAlignment="CENTER">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Label>
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="nameText" promptText="enter text here" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#submitButton" prefHeight="31.0" prefWidth="111.0" text="OK" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="167.0" preserveRatio="true">
+                     <image>
+                        <Image url="@pic/santaDataName.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</Pane>

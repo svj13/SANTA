@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="436.0" style="-fx-border-color: #DB0606;" stylesheets="@CreateRecord.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.createRecordController">
+   <children>
+      <Text fx:id="header" layoutX="23.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #DB0606;" text="Create New Record">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Label layoutX="26.0" layoutY="82.0" text="Case Number " />
+      <TextField fx:id="caseField" editable="false" layoutX="126.0" layoutY="78.0" />
+      <Label layoutX="26.0" layoutY="126.0" text="Date ( * )" />
+      <DatePicker fx:id="dateField" layoutX="126.0" layoutY="121.0" prefHeight="26.0" prefWidth="163.0" />
+      <Label layoutX="26.0" layoutY="167.0" prefHeight="17.0" prefWidth="71.0" text="Time ( * )" />
+      <MenuButton fx:id="selectHour" layoutX="126.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" snapToPixel="false" text="Hour" />
+      <MenuButton fx:id="selectMinute" layoutX="207.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" stylesheets="@CreateRecord.css" text="Minute" />
+      <Label layoutX="24.0" layoutY="197.0" text="Block ( * )" />
+      <TextField fx:id="blockField" layoutX="126.0" layoutY="193.0" />
+      <Label layoutX="26.0" layoutY="320.0" text="IUCR" />
+      <TextField fx:id="iucrField" editable="false" layoutX="220.0" layoutY="316.0" promptText="Descriptions Generate" />
+      <Label layoutX="23.0" layoutY="237.0" text="Primary Description ( * )" />
+      <MenuButton fx:id="primarySelector" layoutX="218.0" layoutY="232.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="Select Type" />
+      <Label layoutX="23.0" layoutY="275.0" text="Secondary Description ( * )" />
+      <MenuButton fx:id="secondarySelector" layoutX="218.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="Select Type" />
+      <Label layoutX="23.0" layoutY="356.0" text="Location Description" />
+      <TextField fx:id="locationField" layoutX="221.0" layoutY="352.0" />
+      <Label layoutX="29.0" layoutY="430.0" text="Beat" />
+      <TextField fx:id="beatField" layoutX="60.0" layoutY="425.0" prefHeight="26.0" prefWidth="87.0" />
+      <Label layoutX="159.0" layoutY="430.0" text="Ward" />
+      <TextField fx:id="wardField" layoutX="197.0" layoutY="426.0" prefHeight="26.0" prefWidth="81.0" />
+      <Label layoutX="289.0" layoutY="430.0" text="FBI CD" />
+      <TextField fx:id="fbiField" layoutX="335.0" layoutY="426.0" prefHeight="26.0" prefWidth="63.0" />
+      <Label layoutX="31.0" layoutY="481.0" text="X" />
+      <TextField layoutX="60.0" layoutY="476.0" prefHeight="26.0" prefWidth="87.0" fx:id="xField" />
+      <Label layoutX="163.0" layoutY="482.0" text="Y" />
+      <TextField fx:id="yField" layoutX="197.0" layoutY="477.0" prefHeight="26.0" prefWidth="81.0" />
+      <Label layoutX="28.0" layoutY="526.0" text="Lat" />
+      <TextField fx:id="latField" layoutX="59.0" layoutY="521.0" prefHeight="26.0" prefWidth="87.0" />
+      <Label layoutX="162.0" layoutY="526.0" text="Long" />
+      <TextField fx:id="longField" layoutX="197.0" layoutY="522.0" prefHeight="26.0" prefWidth="81.0" />
+      <CheckBox fx:id="arrest" layoutX="334.0" layoutY="477.0" mnemonicParsing="false" text="Arrest" />
+      <CheckBox fx:id="domestic" layoutX="334.0" layoutY="504.0" mnemonicParsing="false" text="Domestic" />
+      <Button fx:id="btnSubmit" layoutX="350.0" layoutY="547.0" mnemonicParsing="false" onAction="#submitForm" text="Submit" />
+      <Text layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mandatory fields are indicated with ( * )">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+# Maven
+target/
+*.ser
+*.ec
+
+#Databse
+*.db
+
+# IntelliJ Idea
+.idea/
+out/
+*.ipr
+*.iws
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/

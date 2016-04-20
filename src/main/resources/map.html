@@ -1,0 +1,99 @@
+<!--
+When loaded, this html file enables the use of Google Maps
+It contains Javascript so that the mapController can communicate with it
+Created by Vincent on 16/09/2015.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 100%; margin: 0; padding: 0 }
+        #map_canvas { height: 100% }
+    </style>
+
+    <!-- Our Google API key is here so we can establish a connection -->
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5OYEePrG0nXcbP4mgpaAVDSaRe5gNhpM">
+    </script>
+
+    <!-- This contains all the Javascript functionality for the Google Map -->
+    <script type="text/javascript">
+        var map;
+        var markers = [];
+
+        function initialize() {
+            // Center the map to Chicago
+            var defLatLng = new google.maps.LatLng(41.878114, -87.629798);
+            var mapOptions = {
+                center: defLatLng,
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: false,
+                panControl: false
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            app.handle(0, 0);
+        }
+
+        function placeNewMarker(lat, lng, title, label, info) {
+            var newMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                title: title,
+                label: label
+                });
+            var infoBox = new google.maps.InfoWindow({content: info});
+            google.maps.event.addListener(newMarker, 'click', function () {infoBox.open(map, newMarker);});
+            markers.push(newMarker);
+        }
+
+        function displayMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+            }
+        }
+
+        function setMapCenter(lat, lng) {
+            var latlng = new google.maps.LatLng(lat, lng);
+            map.setCenter(latlng);
+        }
+
+        function switchSatellite() {
+            var mapOptions = {
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            map.setOptions(mapOptions);
+        }
+
+        function switchRoadmap() {
+            var mapOptions = {
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map.setOptions(mapOptions);
+        }
+
+        function switchHybrid() {
+            var mapOptions = {
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+            map.setOptions(mapOptions);
+        }
+
+        function switchTerrain() {
+            var mapOptions = {
+                mapTypeId: google.maps.MapTypeId.TERRAIN
+            };
+            map.setOptions(mapOptions);
+        }
+    </script>
+</head>
+
+<body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.DeleteDataController">
+   <children>
+      <HBox nodeOrientation="LEFT_TO_RIGHT">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="displayLabel1" prefHeight="63.0" prefWidth="703.0" style="-fx-text-fill: #DB0606;" text="Are you sure you want to delete the following list?" wrapText="true">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <HBox prefHeight="34.0" prefWidth="620.0">
+                     <children>
+                        <Label fx:id="dataSet" alignment="CENTER" contentDisplay="CENTER" prefHeight="83.0" prefWidth="649.0" text="LIST NAME" textAlignment="CENTER">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="25.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnYes" alignment="CENTER" mnemonicParsing="false" onAction="#yes" prefHeight="31.0" prefWidth="100.0" text="Yes" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnNo" mnemonicParsing="false" onAction="#no" prefWidth="100.0" text="No" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="167.0" preserveRatio="true">
+                     <image>
+                        <Image url="@pic/santaDataName.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</Pane>

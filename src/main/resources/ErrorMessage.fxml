@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white; -fx-border-color: #751d1c;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group5.santa.gui.ErrorMessageController">
+   <children>
+      <BorderPane>
+         <top>
+            <HBox nodeOrientation="LEFT_TO_RIGHT" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label style="-fx-text-fill: #DB0606;" text="There was an error :(" textFill="#751d1c">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <Pane />
+                              <Label fx:id="displayLabel1" text="  error message" textFill="#0c5b09">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Pane />
+                           </children>
+                        </HBox>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#submitButton" prefHeight="31.0" prefWidth="111.0" text="Ok" />
+                              <Pane HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Pane HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="167.0" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/SadSanta.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</Pane>
